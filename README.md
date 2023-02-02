@@ -7,44 +7,6 @@
   <br><br>
 </h1>
 
-[![Follow me](https://img.shields.io/twitter/follow/leonardomso.svg?style=for-the-badge)](https://twitter.com/leonardomso)
-
-    ## <b>Introduction </b> 
-
-This repository was created with the intention of helping developers master their concepts in JavaScript. It is not a requirement, but a guide for future studies. It is based on an article written by [Stephen Curtis](https://twitter.com/stephenthecurt) and you can read it [here](https://medium.com/@stephenthecurt/33-fundamentals-every-javascript-developer-should-know-13dd720a90d1).
-
-**🚀 Considered by GitHub as one of the [top open source projects of 2018!](https://blog.github.com/2018-12-13-new-open-source-projects/)**
-
-## Community
-
-Feel free to submit a PR adding a link to your own recaps or reviews. If you want to translate the repo into your native language, please feel free to do so.
-
-All the translations for this repo will be listed below:
-
-- [اَلْعَرَبِيَّةُ(Arabic)](https://github.com/amrsekilly/33-js-concepts) — Amr Elsekilly
-- [汉语 (Chinese)](https://github.com/stephentian/33-js-concepts) — Re Tian
-- [Português do Brasil (Brazilian Portuguese)](https://github.com/tiagoboeing/33-js-concepts) — Tiago Boeing
-- [한국어 (Korean)](https://github.com/yjs03057/33-js-concepts.git) — Suin Lee
-- [Español (Spanish)](https://github.com/adonismendozaperez/33-js-conceptos) — Adonis Mendoza
-- [Türkçe (Turkish)](https://github.com/ilker0/33-js-concepts) — İlker Demir
-- [русский язык (Russian)](https://github.com/gumennii/33-js-concepts) — Mihail Gumennii
-- [Tiếng Việt (Vietnamese)](https://github.com/nguyentranchung/33-js-concepts) — Nguyễn Trần Chung
-- [Polski (Polish)](https://github.com/lip3k/33-js-concepts) — Dawid Lipinski
-- [فارسی (Persian)](https://github.com/majidalavizadeh/33-js-concepts) — Majid Alavizadeh
-- [Bahasa Indonesia (Indonesian)](https://github.com/rijdz/33-js-concepts) — Rijdzuan Sampoerna
-- [Français (French)](https://github.com/robinmetral/33-concepts-js) — Robin Métral
-- [हिन्दी (Hindi)](https://github.com/vikaschauhan/33-js-concepts) — Vikas Chauhan
-- [Ελληνικά (Greek)](https://github.com/DimitrisZx/33-js-concepts) — Dimitris Zarachanis
-- [日本語 (Japanese)](https://github.com/oimo23/33-js-concepts) — oimo23
-- [Deutsch (German)](https://github.com/burhannn/33-js-concepts) — burhannn
-- [украї́нська мо́ва (Ukrainian)](https://github.com/AndrewSavetchuk/33-js-concepts-ukrainian-translation) — Andrew Savetchuk
-- [සිංහල (Sinhala)](https://github.com/ududsha/33-js-concepts) — Udaya Shamendra
-- [Italiano (Italian)](https://github.com/Donearm/33-js-concepts) — Gianluca Fiore
-- [ภาษาไทย (Thai)](https://github.com/ninearif/33-js-concepts) — Arif Waram
-- [Català (Catalan)](https://github.com/marioestradaf/33-js-concepts) — Mario Estrada
-
----
-
 ## <a id="table-of-contents">Table of Contents</a>
 
 1. **[Call Stack](#1-call-stack)**
@@ -117,6 +79,21 @@ All the translations for this repo will be listed below:
 
 ## 2. Primitive Types
 
+| **type**  | **`typeof` return value** | **Object wrapper** |
+| :-------: | :-----------------------: | :----------------: |
+|   Null    |      **`"object"`**       |        N/A         |
+| Undefined |        "undefined         |        N/A         |
+|  Boolean  |         "boolean"         |      Boolean       |
+|  Number   |         "number"          |       Number       |
+|  BigInt   |         "bigint"          |       BigInt       |
+|  String   |         "string"          |       String       |
+|  Symbol   |         "symbol"          |       Symbol       |
+
+Note:
+
+- `typeof(NaN)` returns `"number"`.
+- None-primitive types (Objects): `Array`, `Function` and `Object`.
+
 ### Reference
 
 - 📜 [JavaScript data types and data structures — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Primitive_values)
@@ -151,9 +128,15 @@ All the translations for this repo will be listed below:
 
 ## 3. Value Types and Reference Types
 
+- Primitive type variables - copied by value.
+- Objects (Array, Function, Objects) - copied by reference.
+- Variables that are assigned a non-primitive value are given a _reference_ to that value. That _reference_ points to the object’s location in memory. The variables don’t actually contain the value.
+- when `==` and `===` are used on reference-type variables, they check the **`reference`**. If they’re distinct objects, even if they contain identical properties, the comparison will result in `false`. </br>
+- **`Pure Function`** - functions that don’t affect anything in the outside scope
+  - Many native array functions, including `Array.map` and `Array.filter`, are written as pure functions. They copy the array and work with the copy instead of the original. And they return a reference to a new array.
+
 ### Articles
 
-- 📜 [Explaining Value vs. Reference in Javascript — Arnav Aggarwal](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
 - 📜 [Primitive Types & Reference Types in JavaScript — Bran van der Meer](https://gist.github.com/branneman/7fb06d8a74d7e6d4cbcf75c50fec599c)
 - 📜 [Value Types, Reference Types and Scope in JavaScript — Ben Aston](https://medium.com/@benastontweet/lesson-1b-javascript-fundamentals-380f601ba851)
 - 📜 [Back to roots: JavaScript Value vs Reference — Miro Koczka](https://medium.com/dailyjs/back-to-roots-javascript-value-vs-reference-8fb69d587a18)
@@ -231,7 +214,7 @@ All the translations for this repo will be listed below:
 
 - [You Don't Know JS Yet, 2nd Edition: Scope & Closures — Kyle Simpson](https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/scope-closures)
 
-    ### <b>Articles </b>
+  ### <b>Articles </b>
 
 - 📜 [JavaScript Functions — Understanding The Basics — Brandon Morelli](https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99)
 - 📜 [The battle between Function Scope and Block Scope — Marius Herring](http://www.deadcoderising.com/2017-04-11-es6-var-let-and-const-the-battle-between-function-scope-and-block-scope/)
@@ -377,7 +360,7 @@ All the translations for this repo will be listed below:
 
 - 🎥 [JavaScript Engines: The Good Parts™ — Mathias Bynens & Benedikt Meurer](https://www.youtube.com/watch?v=5nmpokoRaZI)
 - 🎥 [JS Engine EXPOSED 🔥 Google's V8 Architecture 🚀 | Namaste JavaScript Ep. 16 - Akshay Saini](https://www.youtube.com/watch?v=2WJL19wDH68)
-- 🎥 [How JavaScript Code is executed? How Javascript works behind the scenes](https://youtu.be/iLWTnMzWtj4)   
+- 🎥 [How JavaScript Code is executed? How Javascript works behind the scenes](https://youtu.be/iLWTnMzWtj4)
 - 🎥 [Understanding the V8 JavaScript Engine - freeCodeCamp Talks](https://www.youtube.com/watch?v=xckH5s3UuX4)
 
 **[⬆ Back to Top](#table-of-contents)**
